@@ -17,6 +17,8 @@
 | Discovery | https://dayze.com/.well-known/mcp.json |
 | Server card | https://dayze.com/.well-known/mcp/server-card.json |
 | OpenAPI | https://dayze.com/openapi.json |
+| OAuth PRM | https://dayze.com/.well-known/oauth-protected-resource |
+| OAuth AS | https://dayze.com/.well-known/oauth-authorization-server |
 | x402scan | https://www.x402scan.com/recipient/0x4DeE3CDA6cb33b1f7A29dE1385B192F802AE3EDa/resources |
 
 ## Pitch
@@ -45,6 +47,12 @@ curl -X POST https://dayze.com/api/v1/mcp \
 ```
 
 Timeline events include `day_number` (e.g. Einstein’s Nobel = Day 15,580).
+
+## Auth
+
+- Public `notable_*` tools: no login (x402 after free tier)
+- Private life-graph tools: `Bearer dayze_k_…` or OAuth `dayze_at_…`
+- OAuth 2.1 + PKCE + DCR for Claude / ChatGPT / Gemini agents — see https://dayze.com/docs/agents
 
 ## Transport
 
