@@ -1,5 +1,7 @@
 # Dayze MCP
 
+[![Dayze MCP](https://glama.ai/mcp/servers/gohluke/dayze-mcp/badge)](https://glama.ai/mcp/servers/gohluke/dayze-mcp)
+
 **Hosted people + life-in-days knowledge API for AI agents.**
 
 | | |
