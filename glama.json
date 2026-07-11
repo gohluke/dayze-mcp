@@ -1,6 +1,8 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/server.json",
-  "maintainers": ["gohluke"],
+  "maintainers": [
+    "gohluke"
+  ],
   "name": "Dayze",
-  "description": "Pay-per-call people + life-in-days knowledge API for AI agents. Notable packs with day-of-life numbers, similar people, birthday peers. Public tools need no API key; USDC on Base via x402 after free tier. Hosted: https://dayze.com/api/v1/mcp"
+  "description": "Pay-per-call people + life-in-days knowledge API for AI agents. Hosted Streamable HTTP: https://dayze.com/api/mcp (OAuth 2.1 + x402)."
 }

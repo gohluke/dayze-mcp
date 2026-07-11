@@ -1,17 +1,18 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.gohluke/dayze-mcp",
-  "description": "Pay-per-call people + life-in-days knowledge API for AI agents. Public notable_* tools need no API key; USDC on Base via x402 after free tier.",
-  "version": "1.3.0",
+  "title": "Dayze — Life in Days + Notable People",
+  "description": "Pay-per-call people + life-in-days knowledge API for AI agents. Public notable_* tools need no API key; USDC on Base via x402 after free tier. Private life-graph tools use OAuth 2.1.",
+  "version": "1.6.0",
+  "websiteUrl": "https://dayze.com",
   "repository": {
     "url": "https://github.com/gohluke/dayze-mcp",
     "source": "github"
   },
-  "websiteUrl": "https://dayze.com",
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://dayze.com/api/v1/mcp"
+      "url": "https://dayze.com/api/mcp"
     }
   ]
 }
