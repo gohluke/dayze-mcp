@@ -4,6 +4,11 @@
 
 **Hosted people + life-in-days knowledge API for AI agents.**
 
+
+**Install / try on Smithery:** https://smithery.ai/servers/polaris/dayze
+
+[![smithery badge](https://smithery.ai/badge/@polaris/dayze)](https://smithery.ai/servers/polaris/dayze)
+
 | | |
 |---|---|
 | Website | https://dayze.com |
