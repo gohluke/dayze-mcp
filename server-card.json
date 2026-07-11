@@ -1,0 +1,14 @@
+{
+  "name": "dayze-life-context",
+  "title": "Dayze",
+  "version": "1.3.0",
+  "description": "Dayze life-in-days + notable people knowledge for AI agents. Public notable_* tools need no API key (x402 USDC on Base after free tier).",
+  "websiteUrl": "https://dayze.com",
+  "documentationUrl": "https://dayze.com/api/v1/mcp",
+  "remotes": [
+    {
+      "type": "http-json",
+      "url": "https://dayze.com/api/v1/mcp"
+    }
+  ]
+}
