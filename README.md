@@ -4,7 +4,6 @@
 
 **Hosted people + life-in-days knowledge API for AI agents.**
 
-
 **Install / try on Smithery:** https://smithery.ai/servers/polaris/dayze
 
 [![smithery badge](https://smithery.ai/badge/@polaris/dayze)](https://smithery.ai/servers/polaris/dayze)
@@ -12,7 +11,9 @@
 | | |
 |---|---|
 | Website | https://dayze.com |
-| MCP endpoint | https://dayze.com/api/v1/mcp |
+| Agents docs | https://dayze.com/docs/agents |
+| Streamable HTTP | https://dayze.com/api/mcp |
+| REST MCP | https://dayze.com/api/v1/mcp |
 | Discovery | https://dayze.com/.well-known/mcp.json |
 | Server card | https://dayze.com/.well-known/mcp/server-card.json |
 | OpenAPI | https://dayze.com/openapi.json |
@@ -25,6 +26,17 @@ Dayze is a pay-per-call people + life-in-days API for AI agents — notable pack
 ## Quick try
 
 ```bash
+# Streamable HTTP (JSON-RPC)
+curl -X POST https://dayze.com/api/mcp \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"curl","version":"1.0"}}}'
+
+curl -X POST https://dayze.com/api/mcp \
+  -H 'Content-Type: application/json' \
+  -d '{"jsonrpc":"2.0","id":2,"method":"tools/list"}'
+
+# REST (compat)
 curl https://dayze.com/api/v1/mcp
 
 curl -X POST https://dayze.com/api/v1/mcp \
@@ -36,7 +48,9 @@ Timeline events include `day_number` (e.g. Einstein’s Nobel = Day 15,580).
 
 ## Transport
 
-REST MCP-compatible HTTP JSON (`GET` capabilities, `POST` tool invoke). Not full Streamable HTTP yet.
+- **Streamable HTTP** JSON-RPC at `/api/mcp` (`initialize`, `tools/list`, `tools/call`)
+- **REST** MCP-compatible at `/api/v1/mcp` (`GET` capabilities, `POST` `{tool, parameters}`)
+- GET SSE on `/api/mcp` is stubbed (405) on Netlify serverless
 
 ## Tags
 
