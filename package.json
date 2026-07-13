@@ -1,7 +1,7 @@
 {
   "name": "dayze-mcp",
-  "version": "1.6.0",
-  "description": "Dayze \u2014 hosted Streamable HTTP MCP (people + life-in-days, x402, OAuth 2.1)",
+  "version": "1.6.1",
+  "description": "Dayze \u2014 hosted Streamable HTTP MCP (people + life-in-days, x402, OAuth 2.1). Dockerfile proxies to https://dayze.com/api/mcp for Glama releases.",
   "homepage": "https://dayze.com",
   "repository": {
     "type": "git",
