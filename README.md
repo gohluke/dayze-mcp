@@ -58,7 +58,7 @@ Timeline events include `day_number` (e.g. Einstein’s Nobel = Day 15,580).
 
 - **Streamable HTTP** JSON-RPC at `/api/mcp` (`initialize`, `tools/list`, `tools/call`)
 - **REST** MCP-compatible at `/api/v1/mcp` (`GET` capabilities, `POST` `{tool, parameters}`)
-- GET SSE on `/api/mcp` is stubbed (405) on Netlify serverless
+- GET `/api/mcp` returns discovery JSON (200); SSE sessions are not available on Netlify serverless
 
 ## Tags
 
