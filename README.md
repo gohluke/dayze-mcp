@@ -2,7 +2,7 @@
 
 [![Dayze MCP](https://glama.ai/mcp/servers/gohluke/dayze-mcp/badge)](https://glama.ai/mcp/servers/gohluke/dayze-mcp)
 
-**Hosted people + life-in-days knowledge API for AI agents.**
+**Life Context for AI agents** — reference Life Context Protocol (`get_context_pack`) plus public notable-people packs.
 
 **Install / try on Smithery:** https://smithery.ai/servers/polaris/dayze
 

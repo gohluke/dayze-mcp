@@ -3,6 +3,6 @@
   "maintainers": [
     "gohluke"
   ],
-  "name": "Dayze",
-  "description": "Pay-per-call people + life-in-days knowledge API for AI agents. Hosted Streamable HTTP: https://dayze.com/api/mcp (OAuth 2.1 + x402)."
+  "name": "Dayze \u2014 Life Context",
+  "description": "Reference Life Context Protocol for AI agents: private get_context_pack (life graph) + public notable_* packs. Spec: https://dayze.com/docs/life-context. Hosted: https://dayze.com/api/mcp"
 }
