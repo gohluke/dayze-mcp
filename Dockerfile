@@ -1,6 +1,10 @@
-# Glama / local install: stdio bridge → Dayze hosted Streamable HTTP MCP.
-# Primary production endpoint remains https://dayze.com/api/mcp (no proxy needed).
-FROM ghcr.io/sparfenyuk/mcp-proxy:v0.12.0
-
-# mcp-proxy remote mode: first arg is upstream URL; force streamable HTTP.
-ENTRYPOINT ["mcp-proxy", "--transport=streamablehttp", "https://dayze.com/api/mcp"]
+# Optional local/Glama image. Prefer Glama admin form:
+#   Build steps: ["npm install"]
+#   CMD arguments: ["node", "./server.mjs"]
+# Production clients should connect to https://dayze.com/api/mcp directly.
+FROM node:22-bookworm-slim
+WORKDIR /app
+COPY package.json ./
+RUN npm install --omit=dev
+COPY server.mjs ./
+CMD ["node", "./server.mjs"]

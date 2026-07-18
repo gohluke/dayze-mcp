@@ -1,7 +1,7 @@
 {
   "name": "dayze-mcp",
   "version": "1.6.1",
-  "description": "Dayze \u2014 hosted Streamable HTTP MCP (people + life-in-days, x402, OAuth 2.1). Dockerfile proxies to https://dayze.com/api/mcp for Glama releases.",
+  "description": "Dayze — hosted Streamable HTTP MCP (people + life-in-days, x402, OAuth 2.1). Stdio adapter for Glama; production endpoint https://dayze.com/api/mcp.",
   "homepage": "https://dayze.com",
   "repository": {
     "type": "git",
@@ -11,6 +11,16 @@
     "url": "https://github.com/gohluke/dayze-mcp/issues"
   },
   "license": "MIT",
+  "type": "module",
+  "bin": {
+    "dayze-mcp": "./server.mjs"
+  },
+  "scripts": {
+    "start": "node ./server.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
   "keywords": [
     "mcp",
     "model-context-protocol",

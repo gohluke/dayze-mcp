@@ -67,14 +67,14 @@ Timeline events include `day_number` (e.g. Einstein’s Nobel = Day 15,580).
 
 ## Glama install / Make Release
 
-Dayze MCP is **hosted** at `https://dayze.com/api/mcp`. This repo ships a thin
-`Dockerfile` that uses [mcp-proxy](https://github.com/sparfenyuk/mcp-proxy) so
-Glama can containerize a stdio bridge for security scans and one-click install.
+Dayze MCP is **hosted** at `https://dayze.com/api/mcp`. This repo ships a local
+**stdio** adapter (`server.mjs`) so Glama can build/scan without putting a URL in CMD
+(Glama rejects remote endpoints in CMD arguments).
 
 1. Open https://glama.ai/mcp/servers/gohluke/dayze-mcp/admin/dockerfile
-2. Point the build at this repo’s `Dockerfile` (or paste the same ENTRYPOINT)
-3. **Deploy** → wait for build test green
-4. **Make Release** → version `1.6.0` (match `package.json`)
+2. **Build steps:** `["npm install"]`
+3. **CMD arguments:** `["node", "./server.mjs"]`
+4. Click **Build** → wait for green → **Build & Release** (`1.6.1`)
 
 Prefer connecting clients directly to `https://dayze.com/api/mcp` (Streamable HTTP + OAuth).
 
