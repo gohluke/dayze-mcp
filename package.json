@@ -1,6 +1,6 @@
 {
   "name": "dayze-mcp",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Dayze — hosted Streamable HTTP MCP (people + life-in-days, x402, OAuth 2.1). Stdio adapter for Glama; production endpoint https://dayze.com/api/mcp.",
   "homepage": "https://dayze.com",
   "repository": {

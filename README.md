@@ -74,7 +74,10 @@ Dayze MCP is **hosted** at `https://dayze.com/api/mcp`. This repo ships a local
 1. Open https://glama.ai/mcp/servers/gohluke/dayze-mcp/admin/dockerfile
 2. **Build steps:** `["npm install"]`
 3. **CMD arguments:** `["node", "./server.mjs"]`
-4. Click **Build** → wait for green → **Build & Release** (`1.6.1`)
+4. Click **Build** → wait for green → **Build & Release** (`1.6.2`)
+
+If Glama keeps checking out an old commit, use build steps:
+`["git fetch origin && git checkout origin/main", "npm install"]`
 
 Prefer connecting clients directly to `https://dayze.com/api/mcp` (Streamable HTTP + OAuth).
 
