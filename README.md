@@ -8,6 +8,19 @@
 
 [![smithery badge](https://smithery.ai/badge/@polaris/dayze)](https://smithery.ai/servers/polaris/dayze)
 
+## Cursor / Grok Bot
+
+This repo is a [Cursor Plugin](https://cursor.com/docs/reference/plugins): `.cursor-plugin/plugin.json` plus a URL-only root [`mcp.json`](https://cursor.com/docs/mcp). Marketplace submit comes later (`cursor.com/marketplace/publish`). Until then, test locally:
+
+```bash
+mkdir -p ~/.cursor/plugins/local
+ln -s /path/to/dayze-mcp ~/.cursor/plugins/local/dayze
+```
+
+Reload Cursor (`Developer: Reload Window`), open Customize, and click **Connect**. Sign in to Dayze in the browser. Do not paste an API key — Cursor discovers OAuth from [RFC 9728](https://dayze.com/.well-known/oauth-protected-resource). Same Connect flow for Cursor desktop, Cursor web, and Grok Bot.
+
+Docs: https://dayze.com/docs/agents
+
 | | |
 |---|---|
 | Website | https://dayze.com |

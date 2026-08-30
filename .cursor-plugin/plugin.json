@@ -1,0 +1,22 @@
+{
+  "name": "dayze",
+  "displayName": "Dayze",
+  "version": "1.0.0",
+  "description": "Life context for AI agents — notable-people packs and your private life graph. Sign in with Dayze on Connect. No API key.",
+  "author": {
+    "name": "Dayze / Phi Digital"
+  },
+  "homepage": "https://dayze.com",
+  "repository": "https://github.com/gohluke/dayze-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "oauth",
+    "life-context",
+    "notable-people",
+    "life-in-days",
+    "x402",
+    "ai-agents"
+  ],
+  "logo": "assets/logo.svg"
+}
