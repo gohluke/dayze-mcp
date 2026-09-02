@@ -1,8 +1,8 @@
 {
   "name": "dayze",
   "displayName": "Dayze",
-  "version": "1.13.0",
-  "description": "Life context for AI agents \u2014 notable-people packs and your private life graph. Sign in with Dayze on Connect. No API key.",
+  "version": "1.14.0",
+  "description": "Life context for AI agents — notable-people packs and your private life graph. Sign in with Dayze on Connect. No API key.",
   "author": {
     "name": "Dayze / Phi Digital"
   },
@@ -19,5 +19,6 @@
     "ai-agents"
   ],
   "logo": "assets/logo.svg",
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json"
 }

@@ -5,7 +5,7 @@ description: Use this when the user wants their Dayze life context, calendar, pe
 
 # Dayze life context
 
-Dayze is a hosted MCP at `https://dayze.com/api/mcp` (Streamable HTTP, protocol 2025-06-18). Same `tools/list` for ChatGPT, Claude, Cursor, and Gemini.
+Dayze is a hosted MCP at `https://dayze.com/api/mcp` (Streamable HTTP, protocol 2025-06-18, server **v1.14.0**). Same `tools/list` for ChatGPT, Claude, Cursor, and Gemini. Cursor plugin pack: https://github.com/gohluke/dayze-mcp — connect with OAuth; no API key in the plugin.
 
 ## When to call what
 

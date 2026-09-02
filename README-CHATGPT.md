@@ -33,4 +33,6 @@ This package follows https://developers.openai.com/plugins/build/plugins
 
 Local test: enable ChatGPT developer mode, add the connector URL above, and/or load `.agents/plugins/marketplace.json` as a repo marketplace.
 
-Live server (2026-09-01): `GET https://dayze.com/api/mcp/health` → version **1.13.0**, **71 tools**.
+Live server: `GET https://dayze.com/api/mcp/health` → version **1.14.0**, **71 tools**.
+
+OpenAI portal **Scan Tools**: `https://dayze.com/api/mcp` (full annotations). ChatGPT connector: `https://dayze.com/api/mcp?tools_profile=compact`.
