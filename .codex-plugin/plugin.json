@@ -1,0 +1,44 @@
+{
+  "name": "dayze",
+  "version": "1.13.0",
+  "description": "Life context for ChatGPT and Codex \u2014 private get_context_pack plus public notable-people packs. Sign in with Dayze. No API key in the plugin.",
+  "author": {
+    "name": "Dayze / Phi Digital",
+    "url": "https://dayze.com"
+  },
+  "homepage": "https://dayze.com/mcp",
+  "repository": "https://github.com/gohluke/dayze-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "oauth",
+    "life-context",
+    "notable-people",
+    "life-in-days",
+    "x402",
+    "chatgpt",
+    "codex"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Dayze",
+    "shortDescription": "Life context MCP for ChatGPT and Codex",
+    "longDescription": "Connect ChatGPT to Dayze over Streamable HTTP MCP. After OAuth, call get_context_pack for the signed-in user's life graph. Public notable_* tools work without login (x402 after the anonymous free tier). Writes (log_food, log_event, and similar) require scope context.",
+    "developerName": "Dayze / Phi Digital",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://dayze.com",
+    "privacyPolicyURL": "https://dayze.com/privacy",
+    "termsOfServiceURL": "https://dayze.com/terms",
+    "defaultPrompt": [
+      "Use Dayze to pull my context pack for this week.",
+      "Search Dayze notables for Albert Einstein and fetch the pack.",
+      "Log that I had laksa for lunch in Tiong Bahru."
+    ],
+    "logo": "./assets/logo.svg"
+  }
+}

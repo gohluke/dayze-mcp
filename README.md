@@ -10,7 +10,11 @@
 
 ## Cursor / Grok Bot
 
-This repo is a [Cursor Plugin](https://cursor.com/docs/reference/plugins): `.cursor-plugin/plugin.json` plus a URL-only root [`mcp.json`](https://cursor.com/docs/mcp). Marketplace submit comes later (`cursor.com/marketplace/publish`). Until then, test locally:
+This repo is a [Cursor Plugin](https://cursor.com/docs/reference/plugins) (**v1.13.0**): `.cursor-plugin/plugin.json`, `skills/dayze-life-context/`, URL-only root [`mcp.json`](https://cursor.com/docs/mcp), plus [Codex/ChatGPT](https://developers.openai.com/plugins/build/plugins) metadata in `.codex-plugin/` and `.mcp.json`.
+
+**Publish to Cursor Marketplace:** submit `https://github.com/gohluke/dayze-mcp` at https://cursor.com/marketplace/publish (see `PUBLISH.md`). ChatGPT plugin is already live.
+
+Until marketplace review lands, test locally:
 
 ```bash
 mkdir -p ~/.cursor/plugins/local

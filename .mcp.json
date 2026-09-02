@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "dayze": {
+      "type": "http",
+      "url": "https://dayze.com/api/mcp"
+    }
+  }
+}
