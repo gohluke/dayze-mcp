@@ -4,9 +4,9 @@
 
 **Life Context for AI agents** — reference Life Context Protocol (`get_context_pack`) plus public notable-people packs.
 
-**Install / try on Smithery:** https://smithery.ai/servers/polaris/dayze
+**Listed on LightNow:** https://lightnow.ai/servers/com.dayze/life-context
 
-[![smithery badge](https://smithery.ai/badge/@polaris/dayze)](https://smithery.ai/servers/polaris/dayze)
+[![LightNow MCP capabilities](https://lightnow.ai/badge/com.dayze/life-context)](https://lightnow.ai/servers/com.dayze/life-context)
 
 ## Cursor / Grok Bot
 
