@@ -10,7 +10,7 @@
 
 ## Cursor / Grok Bot
 
-This repo is a [Cursor Plugin](https://cursor.com/docs/reference/plugins) (**v1.14.0**): `.cursor-plugin/plugin.json`, `skills/dayze-life-context/`, URL-only root [`mcp.json`](https://cursor.com/docs/mcp), plus [Codex/ChatGPT](https://developers.openai.com/plugins/build/plugins) metadata in `.codex-plugin/` and `.mcp.json`.
+This repo is a [Cursor Plugin](https://cursor.com/docs/reference/plugins) (**v1.28.0**): `.cursor-plugin/plugin.json`, `skills/dayze-life-context/`, URL-only root [`mcp.json`](https://cursor.com/docs/mcp), plus [Codex/ChatGPT](https://developers.openai.com/plugins/build/plugins) metadata in `.codex-plugin/` and `.mcp.json`.
 
 **Publish to Cursor Marketplace:** submit `https://github.com/gohluke/dayze-mcp` at https://cursor.com/marketplace/publish (see `PUBLISH.md`). ChatGPT plugin is already live.
 
@@ -30,7 +30,7 @@ Docs: https://dayze.com/docs/agents
 | Website | https://dayze.com |
 | Agents docs | https://dayze.com/docs/agents |
 | Streamable HTTP | https://dayze.com/api/mcp |
-| REST MCP | https://dayze.com/api/v1/mcp |
+| REST MCP | https://dayze.com/api/mcp |
 | Discovery | https://dayze.com/.well-known/mcp.json |
 | Server card | https://dayze.com/.well-known/mcp/server-card.json |
 | OpenAPI | https://dayze.com/openapi.json |
@@ -56,9 +56,9 @@ curl -X POST https://dayze.com/api/mcp \
   -d '{"jsonrpc":"2.0","id":2,"method":"tools/list"}'
 
 # REST (compat)
-curl https://dayze.com/api/v1/mcp
+curl https://dayze.com/api/mcp
 
-curl -X POST https://dayze.com/api/v1/mcp \
+curl -X POST https://dayze.com/api/mcp \
   -H 'Content-Type: application/json' \
   -d '{"tool":"notable_pack","parameters":{"slug":"albert-einstein"}}'
 ```

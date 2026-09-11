@@ -1,6 +1,6 @@
-# Publish Dayze plugin (1.14.0)
+# Publish Dayze plugin (1.28.0)
 
-Live MCP: `GET https://dayze.com/api/mcp/health` → version **1.14.0**, **71 tools**.
+Live MCP: `GET https://dayze.com/api/mcp/health` → version **1.28.0**, **87 tools**.
 
 ## Already live
 - ChatGPT plugin: https://chatgpt.com/plugins/plugin_asdk_app_6a95dc80b2f081918592ac779de57ba0
@@ -10,7 +10,7 @@ Live MCP: `GET https://dayze.com/api/mcp/health` → version **1.14.0**, **71 to
 ## Plugin pack (repo root)
 
 ```
-.cursor-plugin/plugin.json   # Cursor Marketplace (v1.14.0)
+.cursor-plugin/plugin.json   # Cursor Marketplace (v1.28.0)
 mcp.json                     # URL-only Streamable HTTP — no API keys
 .codex-plugin/plugin.json    # ChatGPT / Codex
 .mcp.json                    # Codex http type
@@ -22,7 +22,7 @@ Keep `assets/logo.svg`. Do not add API keys or `.app.json`.
 
 ## Cursor marketplace (submit now)
 
-1. Confirm `main` on https://github.com/gohluke/dayze-mcp includes **v1.14.0**.
+1. Confirm `main` on https://github.com/gohluke/dayze-mcp includes **v1.28.0**.
 2. Local smoke test (optional but recommended):
 
 ```bash

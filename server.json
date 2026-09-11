@@ -1,9 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.gohluke/dayze-mcp",
-  "title": "Dayze — Life in Days + Notable People",
-  "description": "Pay-per-call people + life-in-days knowledge API for AI agents. Public notable_* tools need no API key; USDC on Base via x402 after free tier. Private life-graph tools use OAuth 2.1.",
-  "version": "1.6.0",
+  "title": "Dayze \u2014 Life in Days + Notable People",
+  "description": "Life context for agents: get_context_pack + public notable packs. x402 + OAuth.",
+  "version": "1.28.0",
   "websiteUrl": "https://dayze.com",
   "repository": {
     "url": "https://github.com/gohluke/dayze-mcp",
