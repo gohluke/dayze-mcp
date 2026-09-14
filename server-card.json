@@ -1,7 +1,7 @@
 {
   "name": "dayze-life-context",
   "title": "Dayze",
-  "version": "1.28.0",
+  "version": "1.30.2",
   "description": "Dayze life-in-days + notable people knowledge for AI agents. Public notable_* tools need no API key (x402 USDC on Base after free tier).",
   "websiteUrl": "https://dayze.com",
   "documentationUrl": "https://dayze.com/docs/agents",

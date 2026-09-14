@@ -1,6 +1,6 @@
 {
   "name": "dayze",
-  "version": "1.28.0",
+  "version": "1.30.2",
   "description": "Life context for ChatGPT and Codex \u2014 private get_context_pack plus public notable-people packs. Sign in with Dayze. No API key in the plugin.",
   "author": {
     "name": "Dayze / Phi Digital",

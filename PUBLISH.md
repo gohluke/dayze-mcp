@@ -1,16 +1,38 @@
-# Publish Dayze plugin (1.28.0)
+# Publish Dayze plugin (1.30.2)
 
-Live MCP: `GET https://dayze.com/api/mcp/health` → version **1.28.0**, **87 tools**.
+Live MCP: `GET https://dayze.com/api/mcp/health` → version **1.30.2**, **120 tools**.
+
+Human connect UI: https://dayze.com/mcp  
+Best methods: https://dayze.com/docs/agents · `DAYZE_MCP_BEST_METHODS` in dayze-webapp
 
 ## Already live
-- ChatGPT plugin: https://chatgpt.com/plugins/plugin_asdk_app_6a95dc80b2f081918592ac779de57ba0
-- Hosted MCP: https://dayze.com/api/mcp (OAuth, no key in the plugin)
-- OpenAI Apps domain verification: `https://dayze.com/.well-known/openai-apps`
+
+| Surface | Status |
+|---------|--------|
+| Hosted MCP | https://dayze.com/api/mcp (OAuth) · https://dayze.com/api/mcp/key (API key) |
+| Official MCP Registry | `com.dayze/life-context` (republish when stub version bumps) |
+| ChatGPT custom connector | Live (dev) — compact URL |
+| OpenAI domain verify | `https://dayze.com/.well-known/openai-apps` |
+| Cursor Marketplace | **Submit this repo** (below) |
+| Claude Connectors Directory | **Not submitted** — packet in dayze-webapp `docs/MCP_AGENT_PLATFORMS.md` |
+| OpenAI Apps Directory | **Not submitted** — `docs/CHATGPT_DIRECTORY_SUBMISSION.md` |
+
+## Best method by client
+
+| Client | Method | URL |
+|--------|--------|-----|
+| ChatGPT | OAuth + compact tools | `https://dayze.com/api/mcp?tools_profile=compact` |
+| Claude | OAuth connector | `https://dayze.com/api/mcp` |
+| Cursor | API key **or** OAuth | `/api/mcp/key` + Bearer · or `/api/mcp` OAuth (this plugin) |
+| Gemini Spark | OAuth or Dayze CLI | `https://dayze.com/api/mcp` |
+| Codex | CLI + API key | `/api/mcp/key` |
+
+This marketplace plugin uses **OAuth** (`mcp.json` → `/api/mcp`) so Connect works without pasting keys.
 
 ## Plugin pack (repo root)
 
 ```
-.cursor-plugin/plugin.json   # Cursor Marketplace (v1.28.0)
+.cursor-plugin/plugin.json   # Cursor Marketplace (v1.30.2)
 mcp.json                     # URL-only Streamable HTTP — no API keys
 .codex-plugin/plugin.json    # ChatGPT / Codex
 .mcp.json                    # Codex http type
@@ -20,40 +42,59 @@ assets/logo.svg
 
 Keep `assets/logo.svg`. Do not add API keys or `.app.json`.
 
-## Cursor marketplace (submit now)
+---
 
-1. Confirm `main` on https://github.com/gohluke/dayze-mcp includes **v1.28.0**.
-2. Local smoke test (optional but recommended):
+## 1. Cursor Marketplace — submit now
+
+1. Confirm `main` includes **v1.30.2**.
+2. Optional local smoke:
 
 ```bash
 mkdir -p ~/.cursor/plugins/local
-ln -sf /path/to/dayze-mcp ~/.cursor/plugins/local/dayze
+ln -sf /Users/gluke/Documents/GOH/PHI/dayze-mcp ~/.cursor/plugins/local/dayze
 ```
 
-Reload Cursor (`Developer: Reload Window`) → **Customize** → **Connect** → sign in with Dayze OAuth.
+Reload Cursor → **Customize** → **Connect** → Dayze OAuth.
 
 3. Open https://cursor.com/marketplace/publish
-4. Submit repository URL: `https://github.com/gohluke/dayze-mcp`
-5. Checklist: kebab-case `name` (`dayze`), description, logo path, README, OAuth Connect tested.
+4. Submit: `https://github.com/gohluke/dayze-mcp`
+5. Checklist: name `dayze`, description, logo, README, OAuth Connect tested.
 
-Until review lands, Dayze will not appear in Cursor Search / marketplace browse. Symlink install works today.
+---
 
-## OpenAI public directory (separate from Cursor)
+## 2. Claude Connectors Directory
 
-Portal **Scan Tools** URL: `https://dayze.com/api/mcp` (full `tools/list` with top-level hints).
+Requires Claude **Team/Enterprise**. Paste from dayze-webapp `docs/MCP_AGENT_PLATFORMS.md` § Anthropic:
 
-ChatGPT **connector** URL: `https://dayze.com/api/mcp?tools_profile=compact`
+- Server URL: `https://dayze.com/api/mcp`
+- Privacy: https://dayze.com/privacy
+- Docs: https://dayze.com/docs/agents
 
-Full packet: https://github.com/gohluke/dayze-webapp/blob/main/docs/CHATGPT_DIRECTORY_SUBMISSION.md
+---
 
-Scopes: `openid email mcp context offline_access`
+## 3. OpenAI Apps / Plugins Directory
+
+Full packet: dayze-webapp `docs/CHATGPT_DIRECTORY_SUBMISSION.md`
+
+- Portal Scan Tools: `https://dayze.com/api/mcp` (full annotations)
+- User connector: `https://dayze.com/api/mcp?tools_profile=compact`
+- Demo account: `mcptestbot` (portal only)
+
+---
+
+## 4. Official MCP Registry republish
+
+After tagging `v1.30.2`, republish `server.json` with DNS Ed25519 (see dayze-webapp `mcp-registry/`).
+
+---
 
 ## Smoke (after any deploy)
 
 ```bash
 curl -sS https://dayze.com/api/mcp/health | jq '.version, .tools'
+# expect 1.30.2 / 120
 curl -sS -X POST https://dayze.com/api/mcp \
   -H 'Content-Type: application/json' \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
-  | jq '.result.tools[] | select(.name=="notable_search") | {readOnlyHint, openWorldHint, destructiveHint}'
+  | jq '.result.tools | length'
 ```
