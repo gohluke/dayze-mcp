@@ -148,9 +148,9 @@ const FALLBACK_TOOLS = [
   },
   {
     name: 'get_people',
-    title: 'User Contacts',
+    title: 'Dayze Contacts',
     description:
-      'List user CRM people (flat list). Each row includes contact_origin (personal|online|imported). Requires API key. ($0.10; API key required)',
+      'List Dayze Contacts (private CRM; table people). Each row includes contact_origin (personal|online|imported). Tool name get_people is stable. Requires API key. ($0.10; API key required)',
     inputSchema: { type: 'object', properties: {}, additionalProperties: false },
   },
   {

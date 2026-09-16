@@ -1,11 +1,13 @@
 ---
 name: dayze-life-context
-description: Use this when the user wants their Dayze life context, calendar, people, food, or a public notable-person pack. Prefer Dayze MCP tools over chat memory.
+description: Use this when the user wants their Dayze life context, calendar, Dayze Contacts, food, or a public notable-person pack. Prefer Dayze MCP tools over chat memory.
 ---
 
 # Dayze life context
 
-Dayze is a hosted MCP at `https://dayze.com/api/mcp` (Streamable HTTP, protocol 2025-06-18, server **v1.14.0**). Same `tools/list` for ChatGPT, Claude, Cursor, and Gemini. Cursor plugin pack: https://github.com/gohluke/dayze-mcp — connect with OAuth; no API key in the plugin.
+Dayze is a hosted MCP at `https://dayze.com/api/mcp` (Streamable HTTP, protocol 2025-06-18, server **v1.32.0**). Same `tools/list` for ChatGPT, Claude, Cursor, and Gemini. Cursor plugin pack: https://github.com/gohluke/dayze-mcp — connect with OAuth; no API key in the plugin.
+
+Private CRM is **Dayze Contacts** (`get_people` / `create_person` / `update_person` — tool **names** unchanged). Public notable catalog is **People** (`notable_*`). Do not tell the user to open “My People.”
 
 ## When to call what
 
