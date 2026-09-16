@@ -5,9 +5,9 @@ description: Use this when the user wants their Dayze life context, calendar, Da
 
 # Dayze life context
 
-Dayze is a hosted MCP at `https://dayze.com/api/mcp` (Streamable HTTP, protocol 2025-06-18, server **v1.32.0**). Same `tools/list` for ChatGPT, Claude, Cursor, and Gemini. Cursor plugin pack: https://github.com/gohluke/dayze-mcp — connect with OAuth; no API key in the plugin.
+Dayze is a hosted MCP at `https://dayze.com/api/mcp` (Streamable HTTP, protocol 2025-06-18, server **v1.32.1**). Same `tools/list` for ChatGPT, Claude, Cursor, and Gemini. Cursor plugin pack: https://github.com/gohluke/dayze-mcp — connect with OAuth; no API key in the plugin.
 
-Private CRM is **Dayze Contacts** (`get_people` / `create_person` / `update_person` — tool **names** unchanged). Public notable catalog is **People** (`notable_*`). Do not tell the user to open “My People.”
+Private CRM is **Dayze Contacts**. Advertised MCP names stay `get_people` / `create_person` / `update_person` / `resolve_person` (stable for connectors). Call aliases `get_contacts` / `create_contact` / `update_contact` / `resolve_contact` also work. Public notable catalog is **People** (`notable_*`). Do not tell the user to open “My People.”
 
 ## When to call what
 
@@ -22,4 +22,5 @@ OAuth is discovered from RFC 9728. Request scopes `openid email mcp context offl
 
 ## Aliases
 
-Some tools document aliases (`date` for `event_date`, `query` for `q`). Prefer the **required** schema field names (`event_date`, `q`, `query` on `search`) so strict clients do not drop the call.
+- **Tool names (Contacts):** prefer advertised `get_people` / `create_person` / `update_person` / `resolve_person`. Hosted MCP also accepts `get_contacts` / `create_contact` / `update_contact` / `resolve_contact` on `tools/call` only.
+- **Input fields:** some tools document aliases (`date` for `event_date`, `query` for `q`). Prefer the **required** schema field names (`event_date`, `q`, `query` on `search`) so strict clients do not drop the call.

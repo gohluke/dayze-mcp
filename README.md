@@ -10,9 +10,9 @@
 
 ## Cursor / Grok Bot
 
-This repo is a [Cursor Plugin](https://cursor.com/docs/reference/plugins) (**v1.32.0**): `.cursor-plugin/plugin.json`, `skills/dayze-life-context/`, URL-only root [`mcp.json`](https://cursor.com/docs/mcp), plus [Codex/ChatGPT](https://developers.openai.com/plugins/build/plugins) metadata in `.codex-plugin/` and `.mcp.json`.
+This repo is a [Cursor Plugin](https://cursor.com/docs/reference/plugins) (**v1.32.1**): `.cursor-plugin/plugin.json`, `skills/dayze-life-context/`, URL-only root [`mcp.json`](https://cursor.com/docs/mcp), plus [Codex/ChatGPT](https://developers.openai.com/plugins/build/plugins) metadata in `.codex-plugin/` and `.mcp.json`.
 
-**Dayze Contacts** is the private CRM (`get_people`, `create_person`, `update_person` — names stable). Public **People** stays `notable_*`.
+**Dayze Contacts** is the private CRM. Advertised MCP names stay `get_people`, `create_person`, `update_person`, `resolve_person` (stable). Call aliases `get_contacts` / `create_contact` / `update_contact` / `resolve_contact` work on the hosted server. Public **People** stays `notable_*`.
 
 **Publish to Cursor Marketplace:** submit `https://github.com/gohluke/dayze-mcp` at https://cursor.com/marketplace/publish (see `PUBLISH.md`). ChatGPT plugin is already live.
 

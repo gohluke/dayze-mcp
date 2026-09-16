@@ -1,6 +1,6 @@
-# Publish Dayze plugin (1.32.0)
+# Publish Dayze plugin (1.32.1)
 
-Live MCP: `GET https://dayze.com/api/mcp/health` — after Dayze deploy expect **1.32.0** (Contacts titles). Until then production may still report **1.30.2**.
+Live MCP: `GET https://dayze.com/api/mcp/health` — after Dayze deploy expect **1.32.1** (Contacts titles + call aliases). Until then production may still report an older version.
 
 Human connect UI: https://dayze.com/mcp  
 Best methods: https://dayze.com/docs/agents · `DAYZE_MCP_BEST_METHODS` in dayze-webapp
@@ -32,7 +32,7 @@ This marketplace plugin uses **OAuth** (`mcp.json` → `/api/mcp`) so Connect wo
 ## Plugin pack (repo root)
 
 ```
-.cursor-plugin/plugin.json   # Cursor Marketplace (v1.32.0)
+.cursor-plugin/plugin.json   # Cursor Marketplace (v1.32.1)
 mcp.json                     # URL-only Streamable HTTP — no API keys
 .codex-plugin/plugin.json    # ChatGPT / Codex
 .mcp.json                    # Codex http type
@@ -46,7 +46,7 @@ Keep `assets/logo.svg`. Do not add API keys or `.app.json`.
 
 ## 1. Cursor Marketplace — submit now
 
-1. Confirm `main` includes **v1.32.0**.
+1. Confirm `main` includes **v1.32.1**.
 2. Optional local smoke:
 
 ```bash
@@ -84,7 +84,7 @@ Full packet: dayze-webapp `docs/CHATGPT_DIRECTORY_SUBMISSION.md`
 
 ## 4. Official MCP Registry republish
 
-After tagging `v1.32.0`, republish `server.json` with DNS Ed25519 (see dayze-webapp `mcp-registry/`).
+After tagging `v1.32.1`, republish `server.json` with DNS Ed25519 (see dayze-webapp `mcp-registry/`).
 
 ---
 
@@ -92,7 +92,7 @@ After tagging `v1.32.0`, republish `server.json` with DNS Ed25519 (see dayze-web
 
 ```bash
 curl -sS https://dayze.com/api/mcp/health | jq '.version, .tools'
-# expect 1.32.0 (after Dayze webapp deploy)
+# expect 1.32.1 (after Dayze webapp deploy)
 curl -sS -X POST https://dayze.com/api/mcp \
   -H 'Content-Type: application/json' \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \

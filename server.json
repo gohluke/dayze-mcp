@@ -3,7 +3,7 @@
   "name": "io.github.gohluke/dayze-mcp",
   "title": "Dayze \u2014 Life in Days + Notable People",
   "description": "Life context for agents: get_context_pack + public notable packs. x402 + OAuth.",
-  "version": "1.32.0",
+  "version": "1.32.1",
   "websiteUrl": "https://dayze.com",
   "repository": {
     "url": "https://github.com/gohluke/dayze-mcp",
