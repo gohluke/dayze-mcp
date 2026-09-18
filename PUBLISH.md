@@ -14,7 +14,7 @@ Best methods: https://dayze.com/docs/agents · operator kit: `dayze-webapp-main/
 | Official MCP Registry | `com.dayze/life-context` |
 | OpenAI domain verify | `https://dayze.com/.well-known/openai-apps` |
 | ChatGPT Apps Directory | **In review** — case `C-oTlKSZznSzi0` (Gmail 2026-09-17) |
-| Cursor Marketplace | **Submit now** — `https://github.com/gohluke/dayze-mcp` at https://cursor.com/marketplace/publish |
+| Cursor Marketplace | **In review** — submitted 2026-09-19 (`gohluke/dayze-mcp`) |
 | Claude Connectors | **Deferred** — needs paid Team/Enterprise; custom connector path live on `/mcp` |
 
 ## Best method by client
