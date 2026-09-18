@@ -13,9 +13,9 @@ Best methods: https://dayze.com/docs/agents · operator kit: `dayze-webapp-main/
 | Compact ChatGPT | https://dayze.com/api/mcp?tools_profile=compact (6 read-only) |
 | Official MCP Registry | `com.dayze/life-context` |
 | OpenAI domain verify | `https://dayze.com/.well-known/openai-apps` |
-| ChatGPT Apps Directory | **Ready to submit** — screenshots + portal paste left — see `dayze-webapp-main/docs/SHIP_AI_DIRECTORIES.md` |
-| Cursor Marketplace | **Submit this repo** (below) — after ChatGPT filed |
-| Claude Connectors | **Packet ready** — Team/Enterprise admin |
+| ChatGPT Apps Directory | **In review** — case `C-oTlKSZznSzi0` (Gmail 2026-09-17) |
+| Cursor Marketplace | **Submit now** — `https://github.com/gohluke/dayze-mcp` at https://cursor.com/marketplace/publish |
+| Claude Connectors | **Deferred** — needs paid Team/Enterprise; custom connector path live on `/mcp` |
 
 ## Best method by client
 
@@ -55,17 +55,15 @@ ln -sf /Users/gluke/Documents/GOH/PHI/dayze-mcp ~/.cursor/plugins/local/dayze
 
 Reload → Customize → Connect → Dayze OAuth.
 
-2. Open https://cursor.com/marketplace/publish  
+2. Sign in → https://cursor.com/marketplace/publish  
 3. Submit: `https://github.com/gohluke/dayze-mcp`  
-4. Prefer filing **after** ChatGPT is in review (GTM order).
+4. ChatGPT is already in review — Cursor is the next public listing.
 
 ---
 
-## 2. Claude Connectors
+## 2. Claude Connectors (paid gate)
 
-Packet: `dayze-webapp-main/docs/qa/CLAUDE-CONNECTORS-SUBMISSION.md`  
-Server: `https://dayze.com/api/mcp`
-
+Requires Claude **Team or Enterprise** + Owner. Defer directory submit. Packet stays at `dayze-webapp-main/docs/qa/CLAUDE-CONNECTORS-SUBMISSION.md`. Custom connector install remains free via dayze.com/mcp.
 ---
 
 ## 3. OpenAI Apps / Plugins Directory
