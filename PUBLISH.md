@@ -13,7 +13,7 @@ Best methods: https://dayze.com/docs/agents · operator kit: `dayze-webapp-main/
 | Compact ChatGPT | https://dayze.com/api/mcp?tools_profile=compact (6 read-only) |
 | Official MCP Registry | `com.dayze/life-context` |
 | OpenAI domain verify | `https://dayze.com/.well-known/openai-apps` |
-| ChatGPT Apps Directory | **Ready to submit** — screenshots + portal paste left |
+| ChatGPT Apps Directory | **Ready to submit** — screenshots + portal paste left — see `dayze-webapp-main/docs/SHIP_AI_DIRECTORIES.md` |
 | Cursor Marketplace | **Submit this repo** (below) — after ChatGPT filed |
 | Claude Connectors | **Packet ready** — Team/Enterprise admin |
 
