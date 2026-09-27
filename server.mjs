@@ -92,7 +92,7 @@ const FALLBACK_TOOLS = [
     name: 'get_context_pack',
     title: 'Life Context Pack',
     description:
-      'Life Context Protocol (LCP) reference pack for a Dayze user: identity + who matters (edges) + week calendar + semantic/recent memories. Includes protocol.version. Optional query focuses memories. Requires API key or share token. Spec: https://dayze.com/docs/life-context ($0.20; API key required)',
+      'Life Context pack for the signed-in Dayze user: identity + who matters (edges) + week calendar + semantic/recent memories. Optional query focuses memories. Requires API key or share token. Docs: https://dayze.com/docs/life-context ($0.20; API key required)',
     inputSchema: {
       type: 'object',
       properties: {

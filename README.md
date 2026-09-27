@@ -2,11 +2,35 @@
 
 [![Dayze MCP](https://glama.ai/mcp/servers/gohluke/dayze-mcp/badge)](https://glama.ai/mcp/servers/gohluke/dayze-mcp)
 
-**Life Context for AI agents** — reference Life Context Protocol (`get_context_pack`) plus public notable-people packs.
+**Dayze gives connected AI tools Life Context: your people, plans and memories in a private, correctable record.**
+
+After you sign in, `get_context_pack` hands your AI the signed-in user's context (who matters, this week's plans, recent memories) over the Model Context Protocol (MCP). The public notable-people catalog (`notable_*`) is a separate feature and never touches your private record.
+
+**ChatGPT + iPhone first.** Capture people, plans and moments in Dayze on your iPhone, then connect ChatGPT and ask about your own life. Cursor, Codex, Claude and other MCP clients use the same hosted endpoint.
 
 **Listed on LightNow:** https://lightnow.ai/servers/com.dayze/life-context
 
 [![LightNow MCP capabilities](https://lightnow.ai/badge/com.dayze/life-context)](https://lightnow.ai/servers/com.dayze/life-context)
+
+## Relationship intelligence
+
+Dayze starts with the people in your life. Ask *"When did I last see Maya, and what's next with her?"* and your AI can:
+
+1. **Resolve the person** — `resolve_person` / `get_people` against your private Dayze Contacts.
+2. **Show the linked moments** — `get_person_interactions` returns the events, places and notes connected to that person.
+3. **Show the evidence** — `explain_fact` returns the source behind a claim, so the answer is traceable rather than guessed.
+4. **Correct it** — `update_person`, `merge_people` and the other write tools fix the record, so the next answer is right.
+
+These four steps use the full endpoint (`https://dayze.com/api/mcp`). ChatGPT's compact profile is read-only: `get_context_pack`, `get_people_context`, `get_events`, `search_dayze` and related context reads, with corrections made in Dayze itself.
+
+## Connect ChatGPT
+
+1. ChatGPT → Settings → Connectors → add a custom connector.
+2. URL: `https://dayze.com/api/mcp?tools_profile=compact`
+3. Click **Connect** and sign in to Dayze (OAuth). No API key.
+4. Ask: "Use Dayze to pull my context pack for this week."
+
+More detail: [`README-CHATGPT.md`](README-CHATGPT.md) · https://dayze.com/docs/agents
 
 ## Cursor / Grok Bot
 
@@ -14,7 +38,7 @@ This repo is a [Cursor Plugin](https://cursor.com/docs/reference/plugins) (**v1.
 
 **Dayze Contacts** is the private CRM. Advertised MCP names stay `get_people`, `create_person`, `update_person`, `resolve_person` (stable). Call aliases `get_contacts` / `create_contact` / `update_contact` / `resolve_contact` work on the hosted server. Public **People** stays `notable_*`.
 
-**Publish to Cursor Marketplace:** submit `https://github.com/gohluke/dayze-mcp` at https://cursor.com/marketplace/publish (see `PUBLISH.md`). ChatGPT plugin is already live.
+**Cursor Marketplace:** `https://github.com/gohluke/dayze-mcp` submitted 2026-09-19, in review (see `PUBLISH.md`). The ChatGPT custom connector works today; the ChatGPT Apps Directory listing is in review.
 
 Until marketplace review lands, test locally:
 
@@ -38,11 +62,6 @@ Docs: https://dayze.com/docs/agents
 | OpenAPI | https://dayze.com/openapi.json |
 | OAuth PRM | https://dayze.com/.well-known/oauth-protected-resource |
 | OAuth AS | https://dayze.com/.well-known/oauth-authorization-server |
-| x402scan | https://www.x402scan.com/recipient/0x4DeE3CDA6cb33b1f7A29dE1385B192F802AE3EDa/resources |
-
-## Pitch
-
-Dayze is a pay-per-call people + life-in-days API for AI agents — notable packs with day-of-life numbers, similar people, and birthday peers. Public `notable_*` tools need no API key; USDC on Base via x402 after the free tier.
 
 ## Quick try
 
@@ -65,24 +84,24 @@ curl -X POST https://dayze.com/api/mcp \
   -d '{"tool":"notable_pack","parameters":{"slug":"albert-einstein"}}'
 ```
 
-Timeline events include `day_number` (e.g. Einstein’s Nobel = Day 15,580).
+The last call uses the public notable-people catalog. Timeline events include `day_number` (e.g. Einstein’s Nobel = Day 15,580).
 
 ## Auth
 
-- Public `notable_*` tools: no login (x402 after free tier)
-- Private life-graph tools: `Bearer dayze_k_…` or OAuth `dayze_at_…`
-- OAuth 2.1 + PKCE + DCR for Claude / ChatGPT / Gemini agents — see https://dayze.com/docs/agents
+- Private Life Context tools (`get_context_pack`, Contacts, events, memories): OAuth `dayze_at_…` (recommended) or `Bearer dayze_k_…`, scope `context`
+- Public `notable_*` tools: no login (see [public tool pricing](#technical-reference-public-tool-pricing))
+- OAuth 2.1 + PKCE + DCR for ChatGPT / Claude / Gemini agents — see https://dayze.com/docs/agents
 
 ## Transport
 
 - **Streamable HTTP** JSON-RPC at `/api/mcp` (`initialize`, `tools/list`, `tools/call`)
+- **Compact ChatGPT profile** at `/api/mcp?tools_profile=compact` (read-only subset)
 - **REST** MCP-compatible at `/api/v1/mcp` (`GET` capabilities, `POST` `{tool, parameters}`)
 - GET `/api/mcp` returns discovery JSON (200); SSE sessions are not available on Netlify serverless
 
 ## Tags
 
-`mcp` · `x402` · `ai-agents` · `notable-people` · `life-in-days` · `knowledge-api` · `base` · `usdc`
-
+`life-context` · `mcp` · `model-context-protocol` · `personal-crm` · `relationship-intelligence` · `chatgpt` · `ai-agents` · `notable-people`
 
 ## Glama install / Make Release
 
@@ -99,6 +118,15 @@ If Glama keeps checking out an old commit, use build steps:
 `["git fetch origin && git checkout origin/main", "npm install"]`
 
 Prefer connecting clients directly to `https://dayze.com/api/mcp` (Streamable HTTP + OAuth).
+
+## Technical reference: public tool pricing
+
+This applies only to the public notable-people catalog, not to your private Life Context.
+
+- Anonymous `notable_*` calls have a free tier. After it, the server may answer `402 Payment Required` using [x402](https://www.x402.org/) (USDC on Base).
+- Signed-in Dayze clients (OAuth or API key) skip that anonymous paywall.
+- Per-call list prices appear in each tool description (e.g. `notable_search` $0.01, `notable_pack` $0.05).
+- Payment recipient on x402scan: https://www.x402scan.com/recipient/0x4DeE3CDA6cb33b1f7A29dE1385B192F802AE3EDa/resources
 
 ## License
 
