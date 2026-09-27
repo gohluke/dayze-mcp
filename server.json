@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.gohluke/dayze-mcp",
-  "title": "Dayze \u2014 Life in Days + Notable People",
-  "description": "Life context for agents: get_context_pack + public notable packs. x402 + OAuth.",
+  "title": "Dayze \u2014 Life Context",
+  "description": "Life Context for AI: your people, plans and memories via get_context_pack. OAuth.",
   "version": "1.32.1",
   "websiteUrl": "https://dayze.com",
   "repository": {

@@ -1,5 +1,7 @@
 # ChatGPT / Codex — Dayze plugin
 
+Dayze gives ChatGPT Life Context: your people, plans and memories in a private, correctable record. After you sign in, `get_context_pack` returns your context over MCP. The public notable-people catalog is separate.
+
 Drop these files onto the root of https://github.com/gohluke/dayze-mcp (alongside the existing `.cursor-plugin/` and `mcp.json`).
 
 ```
@@ -33,6 +35,6 @@ This package follows https://developers.openai.com/plugins/build/plugins
 
 Local test: enable ChatGPT developer mode, add the connector URL above, and/or load `.agents/plugins/marketplace.json` as a repo marketplace.
 
-Live server: `GET https://dayze.com/api/mcp/health` → version **1.14.0**, **71 tools**.
+Live server: `GET https://dayze.com/api/mcp/health` → returns current `version` and `tools` count.
 
 OpenAI portal **Scan Tools**: `https://dayze.com/api/mcp` (full annotations). ChatGPT connector: `https://dayze.com/api/mcp?tools_profile=compact`.

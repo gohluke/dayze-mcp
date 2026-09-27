@@ -4,5 +4,5 @@
     "gohluke"
   ],
   "name": "Dayze \u2014 Life Context",
-  "description": "Reference Life Context Protocol for AI agents: private get_context_pack (life graph) + public notable_* packs. Spec: https://dayze.com/docs/life-context. Hosted: https://dayze.com/api/mcp"
+  "description": "Dayze gives connected AI tools Life Context: your people, plans and memories in a private, correctable record. get_context_pack returns the signed-in user's context over MCP (OAuth); the public notable_* catalog is separate. Hosted: https://dayze.com/api/mcp"
 }

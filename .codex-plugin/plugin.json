@@ -1,7 +1,7 @@
 {
   "name": "dayze",
   "version": "1.32.1",
-  "description": "Life context for ChatGPT and Codex \u2014 private get_context_pack plus public notable-people packs. Sign in with Dayze. No API key in the plugin.",
+  "description": "Life Context for ChatGPT and Codex: your people, plans and memories in a private, correctable Dayze record via get_context_pack. Sign in with Dayze. No API key in the plugin.",
   "author": {
     "name": "Dayze / Phi Digital",
     "url": "https://dayze.com"
@@ -10,21 +10,21 @@
   "repository": "https://github.com/gohluke/dayze-mcp",
   "license": "MIT",
   "keywords": [
+    "life-context",
     "mcp",
     "oauth",
-    "life-context",
-    "notable-people",
-    "life-in-days",
-    "x402",
+    "personal-crm",
+    "relationship-intelligence",
     "chatgpt",
-    "codex"
+    "codex",
+    "notable-people"
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Dayze",
-    "shortDescription": "Life context MCP for ChatGPT and Codex",
-    "longDescription": "Connect ChatGPT to Dayze over Streamable HTTP MCP. After OAuth, call get_context_pack for the signed-in user's life graph. Public notable_* tools work without login (x402 after the anonymous free tier). Writes (log_food, log_event, and similar) require scope context.",
+    "shortDescription": "Your people, plans and memories for ChatGPT",
+    "longDescription": "Dayze gives ChatGPT Life Context: your people, plans and memories in a private, correctable record. Connect over MCP and sign in with Dayze (OAuth). get_context_pack returns the signed-in user's context, starting with who matters and what's next with them. Writes (log_food, log_event, and similar) require scope context. The public notable-people catalog (notable_*) is a separate feature that works without login within an anonymous free tier.",
     "developerName": "Dayze / Phi Digital",
     "category": "Productivity",
     "capabilities": [
