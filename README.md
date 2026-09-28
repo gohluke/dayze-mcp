@@ -32,6 +32,24 @@ These four steps use the full endpoint (`https://dayze.com/api/mcp`). ChatGPT's 
 
 More detail: [`README-CHATGPT.md`](README-CHATGPT.md) · https://dayze.com/docs/agents
 
+## Claude Code
+
+This repo is also a [Claude Code plugin](https://code.claude.com/docs/en/plugins) and its own marketplace (`.claude-plugin/`). The plugin adds the hosted Dayze MCP server and the `dayze-life-context` skill.
+
+```bash
+claude plugin marketplace add gohluke/dayze-mcp
+claude plugin install dayze@dayze
+claude mcp login plugin:dayze:dayze
+```
+
+The last command opens Dayze sign-in in your browser (OAuth). In a session you can use `/mcp` → **plugin:dayze:dayze** → **Authenticate** instead. No API key.
+
+Then ask: "Use Dayze to pull my context pack for this week."
+
+To point the plugin at a different Dayze connector URL, set `DAYZE_MCP_URL` in the `env` block of `~/.claude/settings.json` and sign in again. The default is `https://dayze.com/api/mcp`.
+
+Local development: `claude --plugin-dir /path/to/dayze-mcp`.
+
 ## Cursor / Grok Bot
 
 This repo is a [Cursor Plugin](https://cursor.com/docs/reference/plugins) (**v1.33.0**): `.cursor-plugin/plugin.json`, `skills/dayze-life-context/`, URL-only root [`mcp.json`](https://cursor.com/docs/mcp), plus [Codex/ChatGPT](https://developers.openai.com/plugins/build/plugins) metadata in `.codex-plugin/` and `.mcp.json`.
