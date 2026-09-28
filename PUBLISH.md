@@ -16,6 +16,7 @@ Best methods: https://dayze.com/docs/agents · operator kit: `dayze-webapp-main/
 | ChatGPT Apps Directory | **In review** — case `C-oTlKSZznSzi0` (Gmail 2026-09-17) |
 | Cursor Marketplace | **In review** — submitted 2026-09-19 (`gohluke/dayze-mcp`) |
 | Claude Connectors | **Deferred** — needs paid Team/Enterprise; custom connector path live on `/mcp` |
+| Claude Code plugin | Self-hosted marketplace in this repo (`.claude-plugin/`); `claude plugin marketplace add gohluke/dayze-mcp` |
 
 ## Best method by client
 
@@ -23,6 +24,7 @@ Best methods: https://dayze.com/docs/agents · operator kit: `dayze-webapp-main/
 |--------|--------|-----|
 | ChatGPT | OAuth + compact | `https://dayze.com/api/mcp?tools_profile=compact` |
 | Claude | OAuth connector | `https://dayze.com/api/mcp` |
+| Claude Code | OAuth (this plugin) | `https://dayze.com/api/mcp` (override with `DAYZE_MCP_URL`) |
 | Cursor | OAuth (this plugin) or API key | `/api/mcp` · `/api/mcp/key` |
 | Gemini Spark | OAuth or Dayze CLI | `https://dayze.com/api/mcp` |
 | Codex | CLI + API key | `/api/mcp/key` |
@@ -30,6 +32,8 @@ Best methods: https://dayze.com/docs/agents · operator kit: `dayze-webapp-main/
 ## Plugin pack
 
 ```
+.claude-plugin/plugin.json      # Claude Code plugin (inline MCP server)
+.claude-plugin/marketplace.json # Claude Code marketplace: this repo
 .cursor-plugin/plugin.json
 mcp.json
 .codex-plugin/plugin.json

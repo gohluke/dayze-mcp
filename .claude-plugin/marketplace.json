@@ -1,0 +1,19 @@
+{
+  "name": "dayze",
+  "owner": {
+    "name": "Dayze / Phi Digital",
+    "url": "https://dayze.com"
+  },
+  "description": "Dayze plugins for Claude Code.",
+  "plugins": [
+    {
+      "name": "dayze",
+      "source": "./",
+      "description": "Life Context for Claude Code: your people, plans and memories in a private, correctable Dayze record over MCP. Sign in with Dayze (OAuth).",
+      "version": "1.41.3",
+      "homepage": "https://dayze.com/mcp",
+      "category": "productivity",
+      "tags": ["life-context", "mcp", "personal-crm"]
+    }
+  ]
+}

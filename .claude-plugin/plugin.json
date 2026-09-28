@@ -1,0 +1,28 @@
+{
+  "name": "dayze",
+  "displayName": "Dayze",
+  "version": "1.41.3",
+  "description": "Life Context for Claude Code: your people, plans and memories in a private, correctable Dayze record. Read with get_context_pack; log and correct events, food, contacts, money and places. Sign in with Dayze (OAuth). No API key.",
+  "author": {
+    "name": "Dayze / Phi Digital",
+    "url": "https://dayze.com"
+  },
+  "homepage": "https://dayze.com/mcp",
+  "repository": "https://github.com/gohluke/dayze-mcp",
+  "license": "MIT",
+  "keywords": [
+    "life-context",
+    "mcp",
+    "oauth",
+    "personal-crm",
+    "relationship-intelligence",
+    "claude-code",
+    "notable-people"
+  ],
+  "mcpServers": {
+    "dayze": {
+      "type": "http",
+      "url": "${DAYZE_MCP_URL:-https://dayze.com/api/mcp}"
+    }
+  }
+}
