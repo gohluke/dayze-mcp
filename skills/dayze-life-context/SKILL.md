@@ -11,7 +11,7 @@ Private CRM is **Dayze Contacts**. Advertised MCP names stay `get_people` / `cre
 
 ## When to call what
 
-1. Signed-in user asking about *their* week, people, plans, or "context pack" → `get_context_pack` first (optional `query`). Do not invent a life graph from chat history.
+1. Signed-in user asking about *their* week, people, plans, or "context pack" → `get_context_pack` first (optional `query`). For a daily briefing use `get_context_pack` with `query: "What matters today?"`. Read the priorities in rank order and cite their inspect links. Keep date-only deadlines as dates. Say when a section is partial or unavailable. Open Dayze to dismiss or snooze a recommendation. Complete a task or reply only through a write tool the connected profile actually lists.
 2. Celebrity / public figure / "how old in days" → public `notable_search` then `notable_pack` (slug). No login required; after the anonymous free tier the server may 402 (x402 USDC). Authenticated Dayze keys skip that.
 3. User is logging something they did (meal, event, song, person, expense, sleep, place visit) → the matching write tool (`log_food`, `log_event`, `log_favorite_song`, `create_person`, `log_expense`, `log_sleep`, `log_place_visit`, …). Do not store that as a chat memory instead.
 4. Correcting a record → read it first (`get_events`, `resolve_person`, `get_places`, …), then call the matching `update_*` tool with the returned id. Never guess ids.
