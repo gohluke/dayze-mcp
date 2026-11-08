@@ -15,7 +15,7 @@ Best methods: https://dayze.com/docs/agents · operator kit: `dayze-webapp-main/
 | OpenAI domain verify | `https://dayze.com/.well-known/openai-apps` |
 | ChatGPT Apps Directory | **In review** — case `C-oTlKSZznSzi0` (Gmail 2026-09-17) |
 | Cursor Marketplace | **In review** — submitted 2026-09-19 (`gohluke/dayze-mcp`) |
-| Claude Connectors | **Deferred** — needs paid Team/Enterprise; custom connector path live on `/mcp` |
+| Claude Connectors | **Preparation** — any paid Claude plan, including Max, can submit; the Claude Code plugin is a separate distribution |
 | Claude Code plugin | Self-hosted marketplace in this repo (`.claude-plugin/`); `claude plugin marketplace add gohluke/dayze-mcp` |
 
 ## Best method by client
@@ -65,9 +65,12 @@ Reload → Customize → Connect → Dayze OAuth.
 
 ---
 
-## 2. Claude Connectors (paid gate)
+## 2. Claude Connectors Directory
 
-Requires Claude **Team or Enterprise** + Owner. Defer directory submit. Packet stays at `dayze-webapp-main/docs/qa/CLAUDE-CONNECTORS-SUBMISSION.md`. Custom connector install remains free via dayze.com/mcp.
+Any **paid Claude plan**, including Pro or Max, can submit. Team/Enterprise accounts have organization-role requirements; a personal Max account does not need a Team upgrade. See [Anthropic's current submission guide](https://claude.com/docs/connectors/building/submission).
+
+Packet: `dayze-webapp-main/docs/qa/CLAUDE-CONNECTORS-SUBMISSION.md`. Finish OAuth and every-tool QA, reviewer access and the owner's policy review before submission. Installing this repo's Claude Code plugin does not submit or publish a connector listing. Verify the actual state in https://claude.ai/directory/manage.
+
 ---
 
 ## 3. OpenAI Apps / Plugins Directory
