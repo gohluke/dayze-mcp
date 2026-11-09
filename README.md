@@ -32,6 +32,10 @@ These four steps use the full endpoint (`https://dayze.com/api/mcp`). ChatGPT's 
 
 More detail: [`README-CHATGPT.md`](README-CHATGPT.md) · https://dayze.com/docs/agents
 
+## Claude Connectors Directory
+
+A directory listing is separate from the Claude Code plugin below. [Any paid Claude plan](https://claude.com/docs/connectors/building/submission), including Max, can submit; Team/Enterprise accounts have organization-role requirements. See [PUBLISH.md](PUBLISH.md#2-claude-connectors-directory) for preparation and QA gates. Installing this repo does not publish a directory listing.
+
 ## Claude Code
 
 This repo is also a [Claude Code plugin](https://code.claude.com/docs/en/plugins) and its own marketplace (`.claude-plugin/`). The plugin adds the hosted Dayze MCP server and the `dayze-life-context` skill.
