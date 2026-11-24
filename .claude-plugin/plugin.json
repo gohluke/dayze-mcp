@@ -24,5 +24,6 @@
       "type": "http",
       "url": "${DAYZE_MCP_URL:-https://dayze.com/api/mcp}"
     }
-  }
+  },
+  "privacyPolicyUrl": "https://dayze.com/privacy"
 }

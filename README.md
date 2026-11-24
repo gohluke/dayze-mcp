@@ -2,11 +2,13 @@
 
 # Dayze MCP
 
+[![CI](https://github.com/gohluke/dayze-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/gohluke/dayze-mcp/actions/workflows/ci.yml)
+
 **Give your AI the context of your real life: your people, plans and memories.**
 
 Dayze connects a private, correctable life record to AI assistants through the [Model Context Protocol](https://modelcontextprotocol.io/). Instead of re-explaining who someone is or what you planned, connect Dayze and ask a question grounded in the information you saved.
 
-[Connect Dayze](https://dayze.com/mcp) · [Agent documentation](https://dayze.com/docs/agents) · [Development](CONTRIBUTING.md) · [Security](SECURITY.md)
+[Connect Dayze](https://dayze.com/mcp) · [Privacy](https://dayze.com/privacy) · [Agent documentation](https://dayze.com/docs/agents) · [Development](CONTRIBUTING.md) · [Security](SECURITY.md)
 
 ## What this repository contains
 
