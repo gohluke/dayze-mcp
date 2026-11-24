@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 import { fileURLToPath } from 'node:url';
+import { spawn } from 'node:child_process';
 import { PUBLIC_TOOLS } from '../lib/adapter.mjs';
 import { VERSION, createUpstream } from '../lib/upstream.mjs';
 import { connectedAdapter, fixture } from './helpers.mjs';
@@ -135,4 +136,19 @@ test('invalid key configuration fails without including its value', () => {
   for (const apiKey of ['', 'Bearer PRIVATE_SENTINEL', 'dayze_k_x\r\nX-Other: PRIVATE_SENTINEL']) {
     assert.throws(() => createUpstream({ apiKey }), (error) => !error.message.includes('PRIVATE_SENTINEL'));
   }
+});
+
+test('the executable exits cleanly on invalid credential configuration without leaking it', async () => {
+  const child = spawn(process.execPath, [fileURLToPath(new URL('../server.mjs', import.meta.url))], {
+    env: { DAYZE_API_KEY: 'INVALID_PRIVATE_SENTINEL' }, stdio: ['pipe', 'pipe', 'pipe'],
+  });
+  let stdout = '';
+  let stderr = '';
+  child.stdout.on('data', (chunk) => { stdout += chunk; });
+  child.stderr.on('data', (chunk) => { stderr += chunk; });
+  const code = await new Promise((resolve, reject) => { child.on('close', resolve); child.on('error', reject); });
+  assert.equal(code, 1);
+  assert.equal(stdout, '');
+  assert.match(stderr, /could not start/);
+  assert.doesNotMatch(stderr, /PRIVATE_SENTINEL/);
 });

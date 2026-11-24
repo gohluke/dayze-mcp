@@ -98,7 +98,7 @@ npm start
 
 **With a key:** inject `DAYZE_API_KEY` into the process using your client's secret/environment configuration. Use an existing `dayze_k_…` key with the least permissions needed. Do not put the key in this repository, a command argument, issue, screenshot or chat. The adapter forwards it as a Bearer header only to the fixed `https://dayze.com/api/mcp` endpoint. It lists the live tools allowed by that key, preserves pagination and reports discovery errors instead of silently claiming private tools are available.
 
-The adapter does **not** implement an OAuth login flow or persist tokens. Use a direct hosted connection for OAuth. It has a 30-second request deadline, makes no automatic tool-call retries and does not implement x402 payments. A timeout can leave a write's outcome uncertain: inspect Dayze before retrying, and reuse the original idempotency key when the tool supports one.
+The adapter does **not** implement an OAuth login flow or persist tokens. Use a direct hosted connection for OAuth. It has a 30-second deadline per upstream request, makes no automatic tool-call retries and does not implement x402 payments. A timeout can leave a write's outcome uncertain: inspect Dayze before retrying, and reuse the original idempotency key when the tool supports one.
 
 ## How it fits together
 
@@ -138,7 +138,7 @@ Private tools depend on the selected hosted profile and scopes granted to the co
 
 Public notable calls have an anonymous allowance and may return **402 Payment Required**. Consult the current hosted descriptions for availability and pricing. The adapter neither guarantees free calls nor spends money automatically.
 
-This package's version describes the integration files and adapter. The hosted API has its own release cycle; its [health endpoint](https://dayze.com/api/mcp/health) reports that version. Tool counts and external directory review statuses are intentionally not hard-coded here.
+This package's version describes the integration files and adapter. Version 2 requires Node 22+ and removes unauthenticated private-tool advertising. The hosted API has its own release cycle; its [health endpoint](https://dayze.com/api/mcp/health) reports that version. Tool counts and external directory review statuses are intentionally not hard-coded here.
 
 ## Contributing and license
 

@@ -1,6 +1,8 @@
 # Changelog
 
-## 1.42.0 — unreleased
+## 2.0.0 — unreleased
+
+This is a major integration release: the minimum Node version moves from 18 to 22, and unauthenticated stdio discovery is intentionally limited to public tools. Existing hosted OAuth URLs remain unchanged.
 
 - Replace hand-written HTTP/SSE parsing with the official MCP client transport.
 - Make stdio public-only without credentials; add explicit `DAYZE_API_KEY` forwarding for scoped private access.

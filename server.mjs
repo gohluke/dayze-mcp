@@ -10,8 +10,8 @@ try {
   const close = async () => {
     if (closing) return;
     closing = true;
-    await upstream.close();
-    await server.close();
+    // Cleanup failures must not become unhandled exceptions containing HTTP data.
+    await Promise.allSettled([upstream.close(), server.close()]);
   };
   process.once('SIGINT', close);
   process.once('SIGTERM', close);
