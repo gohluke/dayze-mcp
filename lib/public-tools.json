@@ -1,0 +1,139 @@
+[
+  {
+    "name": "notable_search",
+    "title": "Search Notable People",
+    "description": "Search the public Dayze notable-people catalog by name, occupation, or slug. Use when you need to find a person before fetching a pack. Example slug: albert-einstein.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "q": {
+          "type": "string",
+          "description": "Search query (alias: query)"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max results 1–20",
+          "default": 8
+        },
+        "query": {
+          "type": "string",
+          "description": "Alias for q"
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "q"
+          ]
+        },
+        {
+          "required": [
+            "query"
+          ]
+        }
+      ]
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "notable_profile",
+    "title": "Notable Person Profile",
+    "description": "Full notable-person profile JSON by slug. Use for bio, timeline, and metadata without similar people or life-in-days context. Example slug: taylor-swift.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string",
+          "description": "Person slug, e.g. albert-einstein"
+        }
+      },
+      "required": [
+        "slug"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "notable_pack",
+    "title": "Notable Knowledge Pack",
+    "description": "Knowledge pack: profile + life-in-days + similar people + birthday peers (+ quality / upgrade hint). Timeline events include day_number. Best starting point for agent context. Example slug: albert-einstein.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string",
+          "description": "Person slug, e.g. albert-einstein"
+        },
+        "similar": {
+          "type": "number",
+          "default": 8
+        },
+        "peers": {
+          "type": "number",
+          "default": 12
+        },
+        "date": {
+          "type": "string",
+          "description": "YYYY-MM-DD target date"
+        }
+      },
+      "required": [
+        "slug"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "notable_pack_premium",
+    "title": "Premium Notable Pack",
+    "description": "S-tier guaranteed pack (score≥85, timeline≥8, image, embedding). Errors if below bar. Use when you need high-quality, complete notable context. Example slug: elon-musk.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string",
+          "description": "Person slug, e.g. elon-musk"
+        },
+        "similar": {
+          "type": "number",
+          "default": 12
+        },
+        "peers": {
+          "type": "number",
+          "default": 20
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  }
+]

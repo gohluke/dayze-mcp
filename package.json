@@ -1,7 +1,7 @@
 {
   "name": "dayze-mcp",
-  "version": "1.32.1",
-  "description": "Dayze Life Context for AI: your people, plans and memories in a private, correctable record, over hosted Streamable HTTP MCP with OAuth 2.1. Stdio adapter for Glama; production endpoint https://dayze.com/api/mcp.",
+  "version": "2.0.0",
+  "description": "MCP client integrations and a tested stdio adapter for Dayze: personal life context over hosted OAuth, with explicit API-key support for local clients.",
   "homepage": "https://dayze.com",
   "repository": {
     "type": "git",
@@ -16,10 +16,13 @@
     "dayze-mcp": "./server.mjs"
   },
   "scripts": {
-    "start": "node ./server.mjs"
+    "start": "node ./server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check server.mjs && node --check lib/adapter.mjs && node --check lib/upstream.mjs && node --check scripts/check-package.mjs && node scripts/check-package.mjs",
+    "smoke:live": "node scripts/smoke-live.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.12.1"
+    "@modelcontextprotocol/sdk": "1.32.2"
   },
   "keywords": [
     "life-context",
@@ -39,6 +42,19 @@
   ],
   "mcpName": "io.github.gohluke/dayze-mcp",
   "engines": {
-    "node": ">=18"
-  }
+    "node": ">=22"
+  },
+  "files": [
+    "server.mjs",
+    "lib/",
+    "README.md",
+    "README-CHATGPT.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "PUBLISH.md",
+    "CHANGELOG.md",
+    "docs/",
+    "assets/logo-512.png",
+    "LICENSE"
+  ]
 }
