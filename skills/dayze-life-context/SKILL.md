@@ -27,7 +27,7 @@ Private CRM is **Dayze Contacts**. Advertised MCP names stay `get_people` / `cre
 
 ## Auth
 
-OAuth is discovered from RFC 9728. Request scopes `openid email mcp context offline_access`. Private tools need `context`. Share tokens are read-only (`get_context_pack`, `get_life_graph` only). Never ask the user to paste an API key into chat.
+OAuth is discovered from RFC 9728. Follow the scopes the selected hosted profile requests and the user grants. Current granular scopes include `context.read`, `context.write` and, for supported edits, `context.edit`; legacy `context` grants remain supported. Discovery is not consent: use only tools listed for this connection, and respect scope errors. Share tokens are read-only and limited to their granted tools. Never ask the user to paste an API key into chat.
 
 ## Aliases
 

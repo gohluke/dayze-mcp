@@ -1,10 +1,8 @@
-# Optional local/Glama image. Prefer Glama admin form:
-#   Build steps: ["npm install"]
-#   CMD arguments: ["node", "./server.mjs"]
-# Production clients should connect to https://dayze.com/api/mcp directly.
-FROM node:22-bookworm-slim
+FROM node:24-bookworm-slim
 WORKDIR /app
-COPY package.json ./
-RUN npm install --omit=dev
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
 COPY server.mjs ./
+COPY lib/ ./lib/
+USER node
 CMD ["node", "./server.mjs"]

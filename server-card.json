@@ -1,7 +1,7 @@
 {
   "name": "dayze-life-context",
   "title": "Dayze",
-  "version": "1.32.1",
+  "version": "1.42.0",
   "description": "Dayze gives connected AI tools Life Context: your people, plans and memories in a private, correctable record. Sign in with OAuth, then call get_context_pack. The public notable-people catalog (notable_*) is separate.",
   "websiteUrl": "https://dayze.com",
   "documentationUrl": "https://dayze.com/docs/agents",

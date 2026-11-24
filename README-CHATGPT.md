@@ -1,40 +1,31 @@
-# ChatGPT / Codex — Dayze plugin
+# Connect Dayze to ChatGPT
 
-Dayze gives ChatGPT Life Context: your people, plans and memories in a private, correctable record. After you sign in, `get_context_pack` returns your context over MCP. The public notable-people catalog is separate.
+Dayze provides personal life context through the hosted MCP endpoint:
 
-Drop these files onto the root of https://github.com/gohluke/dayze-mcp (alongside the existing `.cursor-plugin/` and `mcp.json`).
-
-```
-.codex-plugin/plugin.json
-.mcp.json
-skills/dayze-life-context/SKILL.md
-.agents/plugins/marketplace.json   # optional, local marketplace test
+```text
+https://dayze.com/api/mcp
 ```
 
-Keep `assets/logo.svg` from the repo. Do not add `.app.json` until ChatGPT developer mode has issued a real `plugin_asdk_app…` connection id.
+Use **OAuth** and sign in through Dayze. Do not paste a Dayze API key into a chat.
 
-## ChatGPT Apps Connector (no plugin zip required)
+## Set up the connection
 
-1. ChatGPT → Settings → Connectors → add custom connector.
-2. URL: `https://dayze.com/api/mcp`
-3. Connect and sign in to Dayze (OAuth). Callback form that Dayze DCR allowlists:
-   - `https://chatgpt.com/connector/oauth/`
-   - `https://chatgpt.com/connector/oauth/<id>`
-   - **Not** `https://chatgpt.com/connector/oauth` (no trailing slash) — DCR 400.
-4. Ask: “Use Dayze to pull my context pack for this week.”
+Follow [OpenAI's current custom MCP connection instructions](https://developers.openai.com/plugins/deploy/connect-chatgpt). Account and workspace policies apply. At the time of this documentation update, the guide uses ChatGPT Plugins → plus → Add custom MCP server. Enter the Dayze endpoint, choose OAuth, review the connection and install it. Then select the connection in a new conversation.
 
-Request scopes `openid email mcp context offline_access`. Default DCR scope is `mcp` only; private tools need `context`.
+Try: “Use Dayze to pull my context pack for this week.” Verify that the answer comes from a successful tool result, includes source links where returned and acknowledges missing context.
 
-## ChatGPT / Codex plugin directory
+The optional `?tools_profile=compact` endpoint uses a curated catalog. It is **not a read-only security boundary**: its tools can include writes. Review the scopes you grant, the listed tools and any action confirmations. A denied action requires appropriate permission; changing the prompt does not grant it.
 
-This package follows https://developers.openai.com/plugins/build/plugins
+## Check the complete flow
 
-- Manifest lives only in `.codex-plugin/plugin.json`.
-- Remote MCP config is `.mcp.json` (URL-only Streamable HTTP).
-- Skill is under `skills/`.
+- Sign in to the intended Dayze account and read your context pack.
+- Ask about a saved plan or contact and check the cited source.
+- Try a request requiring an ungranted permission; the assistant should explain the limitation.
+- If you deliberately authorize a test write, use a disposable record and inspect the actual receipt in Dayze. Automated tests in this repo do not run this step.
+- Revoke the connection in Dayze, then confirm it no longer reads private context.
 
-Local test: enable ChatGPT developer mode, add the connector URL above, and/or load `.agents/plugins/marketplace.json` as a repo marketplace.
+When hosted tool metadata changes, use the client's refresh/reconnect flow and start a new conversation. Follow the official guide if controls have moved.
 
-Live server: `GET https://dayze.com/api/mcp/health` → returns current `version` and `tools` count.
+## Scope of this repository
 
-OpenAI portal **Scan Tools**: `https://dayze.com/api/mcp` (full annotations). ChatGPT connector: `https://dayze.com/api/mcp?tools_profile=compact`.
+The `.codex-plugin/` compatibility metadata, `.mcp.json` connection configuration and `skills/dayze-life-context/` instructions live here. They do not deploy the hosted API or prove an external directory listing is approved. No account-specific app ID or credential is bundled.

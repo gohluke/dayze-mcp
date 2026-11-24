@@ -3,7 +3,7 @@
   "name": "io.github.gohluke/dayze-mcp",
   "title": "Dayze \u2014 Life Context",
   "description": "Life Context for AI: your people, plans and memories via get_context_pack. OAuth.",
-  "version": "1.32.1",
+  "version": "1.42.0",
   "websiteUrl": "https://dayze.com",
   "repository": {
     "url": "https://github.com/gohluke/dayze-mcp",
