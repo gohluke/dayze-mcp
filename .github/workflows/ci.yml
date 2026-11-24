@@ -26,3 +26,8 @@ jobs:
       - run: npm test
       - run: npm audit --omit=dev --audit-level=moderate
       - run: npm pack --dry-run
+      - name: Build and exercise the container
+        if: matrix.node == 24
+        run: |
+          docker build --tag dayze-mcp:ci .
+          node scripts/smoke-container.mjs
